@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-glass-bg: rgba(255, 255, 255, 0.08);
+  --color-glass-border: rgba(255, 255, 255, 0.15);
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    transition: background 1s ease-in-out;
+    margin: 0;
+    padding: 0;
+    color: white;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom Scrollbar for Session History */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Base Glassmorphism classes to be used alongside Tailwind */
+@utility glass-panel {
+  background-color: var(--color-glass-bg);
+  border: 1px solid var(--color-glass-border);
+  backdrop-filter: blur(12px);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.3);
+}
+
+/* 
+ * THEME ENGINE 
+ * Defines background gradients based on theme and mode 
+ */
+
+/* Theme: Deep Space */
+body.theme-deep-space.mode-work {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  background-attachment: fixed;
+}
+body.theme-deep-space.mode-break {
+  background: linear-gradient(135deg, #022c22 0%, #064e3b 100%);
+  background-attachment: fixed;
+}
+
+/* Theme: Serene Forest */
+body.theme-serene-forest.mode-work {
+  background: linear-gradient(135deg, #064e3b 0%, #14532d 100%);
+  background-attachment: fixed;
+}
+body.theme-serene-forest.mode-break {
+  background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%);
+  background-attachment: fixed;
+}
+
+/* Zen Mode Override */
+body.zen-mode {
+  background: radial-gradient(circle at center, #020617 0%, #000000 100%) !important;
+  background-attachment: fixed !important;
+}
