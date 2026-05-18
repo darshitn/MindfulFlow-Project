@@ -33,45 +33,46 @@ const CompletionModal = ({ isOpen, activeTask, onCompleteSession }) => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 pointer-events-none">
-          {/* Force pointer-events: none on confetti canvas to prevent click blocking */}
-          <style>{`canvas { pointer-events: none !important; }`}</style>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-black/40 backdrop-blur-sm pointer-events-none"
-          />
+        <motion.div 
+          key="completion-modal-overlay"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 pointer-events-none"
+        >
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm pointer-events-none" />
 
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 30 }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              y: [0, -10, 0], // Antigravity hover
-              boxShadow: ['0 0 0px rgba(34,211,238,0)', '0 0 40px rgba(34,211,238,0.3)', '0 0 0px rgba(34,211,238,0)']
-            }}
-            exit={{ opacity: 0, y: -50, filter: 'blur(10px)', scale: 0.9 }} // Evaporate exit
-            transition={{
-              y: { repeat: Infinity, duration: 4, ease: "easeInOut" },
-              boxShadow: { repeat: Infinity, duration: 3, ease: "easeInOut" },
-              exit: { duration: 0.5 }
-            }}
-            className="relative w-full max-w-md glass-panel p-8 flex flex-col items-center text-center shadow-2xl border-white/20 pointer-events-auto z-[110]"
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50, filter: 'blur(10px)', scale: 0.9 }}
+            transition={{ duration: 0.5 }}
+            className="relative w-full max-w-md pointer-events-auto z-[110]"
           >
-            {/* Focus Milestone Badge */}
             <motion.div
               animate={{
-                y: [0, -15, 0],
-                boxShadow: ['inset 0 0 10px rgba(34,211,238,0.2)', 'inset 0 0 30px rgba(34,211,238,0.5)', 'inset 0 0 10px rgba(34,211,238,0.2)'],
-                filter: ['drop-shadow(0 0 10px rgba(34,211,238,0.3))', 'drop-shadow(0 0 25px rgba(34,211,238,0.7))', 'drop-shadow(0 0 10px rgba(34,211,238,0.3))']
+                y: [0, -10, 0],
+                boxShadow: ['0 0 0px rgba(34,211,238,0)', '0 0 40px rgba(34,211,238,0.3)', '0 0 0px rgba(34,211,238,0)']
               }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-cyan-500/20 to-indigo-500/20 border border-white/20 flex items-center justify-center mb-6 pointer-events-none"
+              transition={{
+                y: { repeat: Infinity, duration: 4, ease: "easeInOut" },
+                boxShadow: { repeat: Infinity, duration: 3, ease: "easeInOut" }
+              }}
+              className="w-full glass-panel p-8 flex flex-col items-center text-center shadow-2xl border-white/20"
             >
-              <Trophy className="w-12 h-12 text-cyan-300 drop-shadow-lg" />
-            </motion.div>
+              {/* Focus Milestone Badge */}
+              <motion.div
+                animate={{
+                  y: [0, -15, 0],
+                  boxShadow: ['inset 0 0 10px rgba(34,211,238,0.2)', 'inset 0 0 30px rgba(34,211,238,0.5)', 'inset 0 0 10px rgba(34,211,238,0.2)'],
+                  filter: ['drop-shadow(0 0 10px rgba(34,211,238,0.3))', 'drop-shadow(0 0 25px rgba(34,211,238,0.7))', 'drop-shadow(0 0 10px rgba(34,211,238,0.3))']
+                }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-cyan-500/20 to-indigo-500/20 border border-white/20 flex items-center justify-center mb-6 pointer-events-none"
+              >
+                <Trophy className="w-12 h-12 text-cyan-300 drop-shadow-lg" />
+              </motion.div>
 
             <h2 className="text-3xl font-light tracking-wide mb-1 text-white pointer-events-none">Great Job!</h2>
             <p className="text-cyan-200/80 font-medium tracking-widest uppercase text-xs mb-8 pointer-events-none">Focus Milestone Achieved</p>
@@ -138,11 +139,11 @@ const CompletionModal = ({ isOpen, activeTask, onCompleteSession }) => {
                 </motion.button>
               </div>
             )}
+            </motion.div>
           </motion.div>
-        </div>
+        </motion.div>
       )}
     </AnimatePresence>
   );
 };
-
 export default CompletionModal;
