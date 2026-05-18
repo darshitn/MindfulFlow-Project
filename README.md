@@ -1,16 +1,22 @@
-# React + Vite
+# MindfulFlow
+### Elevate your focus with a weightless, antigravity productivity partner.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[cite_start]**MindfulFlow** is a premium Pomodoro suite built for professionals and students who need a deep work environment without visual noise[cite: 528, 576]. [cite_start]It bridges the gap between a standard timer and a wellness tool[cite: 529, 576].
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Key Features
+* [cite_start]**Antigravity UI:** Physics-based interactions and weightless motion design[cite: 530, 577].
+* [cite_start]**The Focus Garden:** Visualize your productivity through a "living" tree that grows in real-time as you work[cite: 531, 577].
+* [cite_start]**Zen Mode:** Instantly isolate your workspace by fading out distractions for deep work sessions[cite: 532, 577].
+* [cite_start]**Ambient Soundscapes:** Integrated high-quality audio loops (Rain, Waves, Ambient) with a precise volume engine[cite: 533, 534, 577].
+* [cite_start]**Session Analytics:** Full CRUD history with persistent storage so your progress is never lost[cite: 535, 577].
 
-## React Compiler
+## 🛠️ Tech Stack
+* [cite_start]**Frontend:** React.js [cite: 536, 578]
+* [cite_start]**Styling:** Tailwind CSS (Glassmorphism architecture) [cite: 536, 578]
+* [cite_start]**Animations:** Framer Motion (GPU-accelerated) [cite: 536, 578]
+* [cite_start]**Icons:** Lucide React [cite: 536, 578]
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Performance Optimizations
+[cite_start]Unlike standard web timers, MindfulFlow uses **Hardware Acceleration** and **Layer Separation** to eliminate rendering jitter, ensuring 60fps performance even during complex transitions[cite: 537, 538, 579].
