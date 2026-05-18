@@ -26,13 +26,16 @@
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.4);
 }
@@ -43,7 +46,7 @@
   border: 1px solid var(--color-glass-border);
   backdrop-filter: blur(12px);
   border-radius: 1.5rem;
-  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
 /* 
@@ -56,6 +59,7 @@ body.theme-deep-space.mode-work {
   background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
   background-attachment: fixed;
 }
+
 body.theme-deep-space.mode-break {
   background: linear-gradient(135deg, #022c22 0%, #064e3b 100%);
   background-attachment: fixed;
@@ -66,6 +70,7 @@ body.theme-serene-forest.mode-work {
   background: linear-gradient(135deg, #064e3b 0%, #14532d 100%);
   background-attachment: fixed;
 }
+
 body.theme-serene-forest.mode-break {
   background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%);
   background-attachment: fixed;
